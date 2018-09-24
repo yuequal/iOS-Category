@@ -7,8 +7,17 @@
 //
 
 #import "NSArray+SafeAction.h"
+#import "SafeMethodSwizzle.h"
 
 @implementation NSArray (SafeAction)
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[SafeMethodSwizzle class] swizzleSEL:@selector(objectAtIndexedSubscript:) withSEL:@selector(safeObjectAtIndexedSubscript:) class:NSClassFromString(@"__NSArrayI")];
+    });
+}
 
 - (id)safeObjectAtIndex:(NSUInteger)index
 {
@@ -25,5 +34,6 @@
     }
     return nil;
 }
+
 
 @end

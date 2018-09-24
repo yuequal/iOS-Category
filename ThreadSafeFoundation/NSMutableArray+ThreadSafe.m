@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableArray+ThreadSafe.h"
+#import "SafeMethodSwizzle.h"
 #import <objc/runtime.h>
 
 @implementation NSMutableArray (ThreadSafe)

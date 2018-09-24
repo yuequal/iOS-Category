@@ -7,8 +7,17 @@
 //
 
 #import "NSMutableArray+SafeAction.h"
+#import "SafeMethodSwizzle.h"
 
 @implementation NSMutableArray (SafeAction)
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[SafeMethodSwizzle class] swizzleSEL:@selector(objectAtIndexedSubscript:) withSEL:@selector(safeObjectAtIndexedSubscript:) class:NSClassFromString(@"__NSArrayM")];
+    });
+}
 
 - (id)safeObjectAtIndex:(NSUInteger)index
 {
@@ -60,7 +69,8 @@
 
 - (void)safeReplaceObjectsAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray *)objects
 {
-    if (!objects || !indexes || indexes.count != objects.count) return;
+    if (!objects || !indexes || ![self _indexSetIsValid:indexes] ||
+        indexes.count != objects.count) return;
     [self replaceObjectsAtIndexes:indexes withObjects:objects];
 }
 

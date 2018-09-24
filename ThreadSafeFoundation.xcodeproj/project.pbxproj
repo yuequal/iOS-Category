@@ -20,6 +20,8 @@
 		C07CC48C2153DF13007BDAB9 /* NSMutableArray+ThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = C07CC48B2153DF13007BDAB9 /* NSMutableArray+ThreadSafe.m */; };
 		C07CC48F215485CC007BDAB9 /* NSMutableDictionary+SafeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C07CC48E215485CC007BDAB9 /* NSMutableDictionary+SafeMethod.m */; };
 		C07CC49221549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = C07CC49121549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.m */; };
+		C0B77027215741E3006F9688 /* TestArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B77026215741E3006F9688 /* TestArray.m */; };
+		C0B7702A21574A6E006F9688 /* SafeMethodSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B7702921574A6E006F9688 /* SafeMethodSwizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		C07CC48E215485CC007BDAB9 /* NSMutableDictionary+SafeMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeMethod.m"; sourceTree = "<group>"; };
 		C07CC49021549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ThreadSafe.h"; sourceTree = "<group>"; };
 		C07CC49121549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ThreadSafe.m"; sourceTree = "<group>"; };
+		C0B77025215741E3006F9688 /* TestArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestArray.h; sourceTree = "<group>"; };
+		C0B77026215741E3006F9688 /* TestArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestArray.m; sourceTree = "<group>"; };
+		C0B7702821574A6E006F9688 /* SafeMethodSwizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeMethodSwizzle.h; sourceTree = "<group>"; };
+		C0B7702921574A6E006F9688 /* SafeMethodSwizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeMethodSwizzle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,10 @@
 				C07CC48E215485CC007BDAB9 /* NSMutableDictionary+SafeMethod.m */,
 				C07CC49021549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.h */,
 				C07CC49121549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.m */,
+				C0B77025215741E3006F9688 /* TestArray.h */,
+				C0B77026215741E3006F9688 /* TestArray.m */,
+				C0B7702821574A6E006F9688 /* SafeMethodSwizzle.h */,
+				C0B7702921574A6E006F9688 /* SafeMethodSwizzle.m */,
 			);
 			path = ThreadSafeFoundation;
 			sourceTree = "<group>";
@@ -287,9 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0B7702A21574A6E006F9688 /* SafeMethodSwizzle.m in Sources */,
 				C07CC48C2153DF13007BDAB9 /* NSMutableArray+ThreadSafe.m in Sources */,
 				C07CC4572153DB01007BDAB9 /* ViewController.m in Sources */,
 				C07CC4892153DC4D007BDAB9 /* NSMutableArray+SafeAction.m in Sources */,
+				C0B77027215741E3006F9688 /* TestArray.m in Sources */,
 				C07CC4622153DB02007BDAB9 /* main.m in Sources */,
 				C07CC49221549DAD007BDAB9 /* NSMutableDictionary+ThreadSafe.m in Sources */,
 				C07CC4542153DB01007BDAB9 /* AppDelegate.m in Sources */,

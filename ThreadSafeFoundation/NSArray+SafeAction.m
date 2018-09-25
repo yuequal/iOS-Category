@@ -29,10 +29,10 @@
 
 - (id)safeObjectAtIndexedSubscript:(NSUInteger)index
 {
-    if (index < self.count) {
-        return [self objectAtIndexedSubscript:index];
+    if (index >= self.count) {
+        return nil;
     }
-    return nil;
+    return [self safeObjectAtIndexedSubscript:index];
 }
 
 

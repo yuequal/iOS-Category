@@ -12,7 +12,7 @@
 
 - (id)safeObjectAtIndex:(NSUInteger)index;
 
-- (id)safeObjectAtIndexedSubscript:(NSUInteger)idx;
+//- (id)safeObjectAtIndexedSubscript:(NSUInteger)idx;
 
 - (void)safeAddObject:(id)anObject;
 

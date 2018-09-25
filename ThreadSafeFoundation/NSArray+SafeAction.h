@@ -12,6 +12,6 @@
 
 - (id)safeObjectAtIndex:(NSUInteger)index;
 
-- (id)safeObjectAtIndexedSubscript:(NSUInteger)index;
+//- (id)safeObjectAtIndexedSubscript:(NSUInteger)index;
 
 @end

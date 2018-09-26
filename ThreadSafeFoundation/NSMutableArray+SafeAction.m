@@ -28,7 +28,7 @@
 - (id)safeObjectAtIndexedSubscript:(NSUInteger)index
 {
     if (![self _indexIsValid:index]) return nil;
-    return [self objectAtIndexedSubscript:index];
+    return [self safeObjectAtIndexedSubscript:index];
 }
 
 - (void)safeRemoveObjectAtIndex:(NSUInteger)index

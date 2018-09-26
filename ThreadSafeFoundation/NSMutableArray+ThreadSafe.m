@@ -10,16 +10,24 @@
 #import "SafeMethodSwizzle.h"
 #import <objc/runtime.h>
 
+static const char *SHSafeLockAssociateKey = "SHSafeLockAssociateKey";
+
 @implementation NSMutableArray (ThreadSafe)
 
 - (NSLock *)safeLock
 {
-    return objc_getAssociatedObject(self, _cmd);
+    NSLock *associateLock = (NSLock *)objc_getAssociatedObject(self, SHSafeLockAssociateKey);
+    if (!associateLock) {
+        associateLock = [[NSLock alloc] init];
+        objc_setAssociatedObject(self, SHSafeLockAssociateKey, associateLock, OBJC_ASSOCIATION_RETAIN);
+        return associateLock;
+    }
+    return associateLock;
 }
 
 - (void)setSafeLock:(NSLock *)safeLock
 {
-    objc_setAssociatedObject(self, @selector(safeLock), safeLock, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, SHSafeLockAssociateKey, safeLock, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (id)sh_safeObjectAtIndex:(NSUInteger)index
